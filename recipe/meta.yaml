@@ -14,6 +14,7 @@ source:
       - replace-scripts-with-console.patch
 
 build:
+  #noarch: python
   number: 0
   script:
     {% set console_script=os.sep.join(['superset', 'bin', 'superset']) %}
@@ -21,9 +22,8 @@ build:
     - npm ci
     - npm run build
     - popd
-    - mv {{ console_script }} {{ console_script}}.py  # [unix]
+    - mv {{ console_script }} {{ console_script}}.py
     - "{{ PYTHON }} -m pip install . -vv"
-  skip: True  # [win or not py36]
   entry_points:
     - superset = superset.bin.superset:cli
 
@@ -52,7 +52,7 @@ requirements:
     - flask-migrate #==2.1.1
     - flask-wtf #==0.14.2
     - geopy #==1.11.0
-    - gunicorn #==19.8.0  # deprecated
+    - gunicorn #==19.8.0  # deprecated  # [unix]
     - humanize #==0.5.1
     - idna #==2.6
     - isodate #==0.6.0
@@ -74,18 +74,32 @@ requirements:
     - sqlparse #==0.2.4
     - unicodecsv #==0.14.1
     - wtforms-json #2.2.1
+  run_constrained:
+    # CORS
+    - flask-cors >=2.0.0
 
-# Add outputs or 
-# runtime constraints for superset-with-cors, -with-console-log, -with-hive, -with-presto, -with gsheets
+    # console_log
+    # - console_log ==0.2.10
+
+    # Hive
+    - pyhive >=0.6.1
+    - tableschema
+
+    # Presto
+    #- pyhive[presto] >=0.4.0
+
+    # Gsheets
+    # - gsheetsdb >=0.1.9
 
 test:
   commands:
     - export SUPERSET_HOME={{PREFIX}}  # [unix]
+    - export FLASK_APP='superset'  # [unix]
     - set SUPERSET_HOME={{PREFIX}}  # [win]
+    - set FLASK_APP='superset'  # [win]
     - superset --help
     - superset db upgrade
-    - export FLASK_APP='superset'
-    - flask fab create-admin
+    - superset fab create-admin
         --username admin
         --firstname admin
         --lastname admin
