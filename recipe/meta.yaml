@@ -24,7 +24,7 @@ build:
     - popd
     - mv {{ console_script }} {{ console_script}}.py
     - "{{ PYTHON }} -m pip install . -vv"
-  skip: True  # [py2k]
+  skip: True  # [win or py2k]
   entry_points:
     - superset = superset.bin.superset:cli
 
