@@ -18,12 +18,13 @@ build:
   number: 0
   script:
     {% set console_script=os.sep.join(['superset', 'bin', 'superset']) %}
-    - pushd {{ name }}/assets
+    - pushd {{ name }}{{os.sep}}assets
     - npm ci
     - npm run build
     - popd
     - mv {{ console_script }} {{ console_script}}.py
     - "{{ PYTHON }} -m pip install . -vv"
+  skip: True  # [py2k]
   entry_points:
     - superset = superset.bin.superset:cli
 
