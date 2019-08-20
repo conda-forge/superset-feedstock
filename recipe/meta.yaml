@@ -1,5 +1,5 @@
 {% set name = "superset" %}
-{% set version = "0.33.0rc1" %}
+{% set version = "0.34.0rc1" %}
 
 package:
   name: {{ name|lower }}
@@ -39,58 +39,70 @@ requirements:
     # All dependency comments come from github
     # https://raw.githubusercontent.com/apache/incubator-superset/{{version}}/requirements.txt
     - bleach >=3.0.2,<4.0.0
-    - celery >=4.2.0,<5.0.0
+    - celery >=4.3.0,<5.0.0
     - click >=6.0,<7.0.0
     - colorama  #==0.3.9
     - contextlib2 #==0.5.5
     - croniter >=0.3.28
     - cryptography >=2.4.2
     - flask >=1.0.0,<2.0.0
-    # DIVERGENCE: with setup.py
-    - flask-appbuilder >=2,<3
+    - flask-appbuilder >=2.1.9,<2.3.0
     - flask-caching #==1.4.0
     - flask-compress #==1.4.0
     - flask-migrate #==2.1.1
+    - flask-talisman
     - flask-wtf #==0.14.2
     - geopy #==1.11.0
-    - gunicorn #==19.8.0  # deprecated  # [unix]
+    - gunicorn <19.9.0 #==19.8.0  # deprecated  # [unix]
     - humanize #==0.5.1
     - idna #==2.6
     - isodate #==0.6.0
     - markdown >=3.0
-    - pandas >=0.18.0,<0.24.0
+    - pandas >=0.24.2,<0.25.0
     - parsedatetime #==2.0.0
     - pathlib2 #==2.3.0
     - polyline #==1.3.2
-    - pydruid >=0.4.3
     - python-dateutil #==2.6.1
+    - python-dotenv
     - python-geohash #==0.8.5
-    - pyyaml >=3.13
-    - requests >=2.20.0
+    - pyyaml >=5.1
     - retry >=0.9.2
     - selenium >=3.141.0
     - simplejson >=3.15.0
-    - sqlalchemy >=1.3.1,<2.0
-    - sqlalchemy-utils #==0.32.21
-    - sqlparse #==0.2.4
-    - unicodecsv #==0.14.1
+    - sqlalchemy >=1.3.5,<2.0
+    - sqlalchemy-utils >=0.33.2
+    - sqlparse >=0.3.0,<0.4
     - wtforms-json #2.2.1
   run_constrained:
+    # BigQuery
+    #- pybigquery >=0.4.10
+    #- pandas_gbq >=0.10.0
+
     # CORS
     - flask-cors >=2.0.0
 
-    # console_log
-    # - console_log ==0.2.10
+    # Gsheets
+    # - gsheetsdb >=0.1.9
 
     # Hive
     - pyhive >=0.6.1
     - tableschema
+    - thrift >=0.11.1,<1.0.0
+
+    # MySQL
+    - mysqlclient ==1.4.2.post1
+
+    # PostgreSQL
+    # DIVERGENCE with setup.py
+    # - psycopg2-binary ==2.7.5
+    - psycopg2 ==2.7.5
+
+    # Druid
+    - pydruid ==0.5.2
+    - requests ==2.22.0
 
     # Presto
     #- pyhive[presto] >=0.4.0
-
-    # Gsheets
-    # - gsheetsdb >=0.1.9
 
 test:
   commands:
