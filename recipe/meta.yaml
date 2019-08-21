@@ -7,7 +7,7 @@ package:
 
 source:
   - url: https://github.com/apache/incubator-{{ name }}/archive/{{ version }}.tar.gz
-    sha256: cef0c1ff48bf099aca4ed4f2f18ca0eae87f29715b3c314eb07671c30283d7ce
+    sha256: 383979947527aeeaf46b6fa6af61875a90feadb69bafc3bf6928300f2cd2c18a
   - url: https://raw.githubusercontent.com/apache/incubator-{{ name }}/master/LICENSE.txt
     sha256: 600710369a31face16d98c10682bda5d513fe1136f39f0c12f6f6cd9e2ccfe98
   - patches:
