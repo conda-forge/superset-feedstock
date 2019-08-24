@@ -1,5 +1,5 @@
 {% set name = "superset" %}
-{% set version = "0.34.0rc1" %}
+{% set version = "0.34.0rc2" %}
 
 package:
   name: {{ name|lower }}
@@ -55,7 +55,6 @@ requirements:
     - geopy #==1.11.0
     - gunicorn <19.9.0 #==19.8.0  # deprecated  # [unix]
     - humanize #==0.5.1
-    - idna #==2.6
     - isodate #==0.6.0
     - markdown >=3.0
     - pandas >=0.24.2,<0.25.0
