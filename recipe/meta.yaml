@@ -1,5 +1,5 @@
 {% set name = "superset" %}
-{% set version = "0.34.0rc1" %}
+{% set version = "0.34.0rc2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   - url: https://github.com/apache/incubator-{{ name }}/archive/{{ version }}.tar.gz
-    sha256: 383979947527aeeaf46b6fa6af61875a90feadb69bafc3bf6928300f2cd2c18a
+    sha256: b3504216d8f44c21b83d7bd04dbdd058b6b94357f9e0452ca1d4ef17c9f85242
   - url: https://raw.githubusercontent.com/apache/incubator-{{ name }}/master/LICENSE.txt
     sha256: 600710369a31face16d98c10682bda5d513fe1136f39f0c12f6f6cd9e2ccfe98
   - patches:
@@ -55,7 +55,6 @@ requirements:
     - geopy #==1.11.0
     - gunicorn <19.9.0 #==19.8.0  # deprecated  # [unix]
     - humanize #==0.5.1
-    - idna #==2.6
     - isodate #==0.6.0
     - markdown >=3.0
     - pandas >=0.24.2,<0.25.0
