@@ -1,5 +1,5 @@
 {% set name = "superset" %}
-{% set version = "0.28.1" %}
+{% set version = "0.30.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   - url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-    sha256: d17192941353b93375ad593e1c812858bd36b25076481dca00d864fcd050e99f
+    sha256: e37cb60dc84487fcad4cd3f33e8355d83c0b6b1381b58f041a9fac2d4344bc55
   - url: https://raw.githubusercontent.com/apache/incubator-superset/master/LICENSE.txt
     sha256: 600710369a31face16d98c10682bda5d513fe1136f39f0c12f6f6cd9e2ccfe98
   - patches:
