@@ -1,5 +1,5 @@
 {% set name = "superset" %}
-{% set version = "0.28.1" %}
+{% set version = "0.30.1" %}
 
 package:
   name: {{ name|lower }}
