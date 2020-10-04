@@ -15,7 +15,7 @@ build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
-    - superset = superset.bin.superset:cli
+    - superset = superset.cli:superset
 
 requirements:
   host:
@@ -68,7 +68,7 @@ requirements:
 test:
   imports:
     - superset
-    - superset.bin
+    - superset.cli
   commands:
     # for some reason pip check fails since something needs the pip typing package, so just install it
     - pip install typing
