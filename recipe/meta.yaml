@@ -70,6 +70,8 @@ test:
     - superset
     - superset.bin
   commands:
+    # for some reason pip check fails since something needs the pip typing package, so just install it
+    - pip install typing
     - pip check
     - superset --help
     # - export SUPERSET_HOME={{PREFIX}}  # [unix]
