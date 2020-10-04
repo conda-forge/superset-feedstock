@@ -74,8 +74,8 @@ test:
     - pip install typing
     - pip check
     - superset --help
-    # - export SUPERSET_HOME={{PREFIX}}  # [unix]
-    # - set SUPERSET_HOME={{PREFIX}}  # [win]
+    # - export SUPERSET_HOME={{ PREFIX }}  # [unix]
+    # - set SUPERSET_HOME={{ PREFIX }}  # [win]
     # - superset db upgrade
     # - export FLASK_APP='superset'
     # - flask fab create-admin
