@@ -29,6 +29,7 @@ requirements:
     - click <8
     - colorama
     - contextlib2
+    - cron-descriptor
     - croniter >=0.3.28
     - cryptography >=3.2.1
     - flask >=1.1.0,<2.0.0
@@ -48,6 +49,7 @@ requirements:
     - pandas >=1.1.2,<1.2
     - parsedatetime
     - pathlib2
+    - pgsanity
     - polyline
     - pyarrow >=1.0.1,<1.1
     - pyjwt >=1.7.1,<2
