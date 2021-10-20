@@ -52,11 +52,11 @@ if [ -z "${DOCKER_IMAGE}" ]; then
         echo "WARNING: DOCKER_IMAGE variable not set and shyaml not installed. Trying to parse with coreutils"
         DOCKER_IMAGE=$(cat .ci_support/${CONFIG}.yaml | grep '^docker_image:$' -A 1 | tail -n 1 | cut -b 3-)
         if [ "${DOCKER_IMAGE}" = "" ]; then
-            echo "No docker_image entry found in ${CONFIG}. Falling back to condaforge/linux-anvil-comp7"
-            DOCKER_IMAGE="condaforge/linux-anvil-comp7"
+            echo "No docker_image entry found in ${CONFIG}. Falling back to quay.io/condaforge/linux-anvil-comp7"
+            DOCKER_IMAGE="quay.io/condaforge/linux-anvil-comp7"
         fi
     else
-        DOCKER_IMAGE="$(cat "${FEEDSTOCK_ROOT}/.ci_support/${CONFIG}.yaml" | shyaml get-value docker_image.0 condaforge/linux-anvil-comp7 )"
+        DOCKER_IMAGE="$(cat "${FEEDSTOCK_ROOT}/.ci_support/${CONFIG}.yaml" | shyaml get-value docker_image.0 quay.io/condaforge/linux-anvil-comp7 )"
     fi
 fi
 
@@ -75,12 +75,14 @@ fi
 ( startgroup "Start Docker" ) 2> /dev/null
 
 export UPLOAD_PACKAGES="${UPLOAD_PACKAGES:-True}"
+export IS_PR_BUILD="${IS_PR_BUILD:-False}"
 docker run ${DOCKER_RUN_ARGS} \
            -v "${RECIPE_ROOT}":/home/conda/recipe_root:rw,z,delegated \
            -v "${FEEDSTOCK_ROOT}":/home/conda/feedstock_root:rw,z,delegated \
            -e CONFIG \
            -e HOST_USER_ID \
            -e UPLOAD_PACKAGES \
+           -e IS_PR_BUILD \
            -e GIT_BRANCH \
            -e UPLOAD_ON_BRANCH \
            -e CI \
