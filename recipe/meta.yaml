@@ -49,7 +49,7 @@ requirements:
     - gunicorn >-20.0.2,<20.1
     - holidays =0.10.3
     - humanize
-    - itsdangerous>=1.0.0, <2.0.0
+    - itsdangerous >=1.0.0,<2.0.0
     - isodate
     - markdown >=3.0
     - markupsafe
@@ -76,9 +76,9 @@ requirements:
     - sqlalchemy >=1.3.16,<1.4,!=1.3.21
     - sqlalchemy-utils >=0.37.8,<0.38
     - sqlparse ==0.3.0
-    - tabulate==0.8.9
+    - tabulate ==0.8.9
     - typing_extensions >=3.10,<4
-    - werkzeug==0.8.9
+    - werkzeug ==0.8.9
     - wtforms
     - wtforms-json
 
