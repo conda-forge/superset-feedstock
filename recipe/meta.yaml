@@ -37,7 +37,7 @@ requirements:
     - flask >=1.1.0,<2.0.0
     - flask-appbuilder >=3.3.4,<4.0.0
     - flask-babel
-    - flask-caching >-1.10.0
+    - flask-caching >=1.10.0
     - flask-compress
     - flask-jwt-extended
     - flask-login
