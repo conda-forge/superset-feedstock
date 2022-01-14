@@ -1,5 +1,5 @@
 {% set name = "apache-superset" %}
-{% set version = "1.1.0" %}
+{% set version = "1.3.2" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/apache-superset-{{ version }}.tar.gz
-  sha256: 913c5b988f8c7353feaf8d5fa8421d8ae0126403089980e059f86ce2a4286afd
+  sha256: 1e65d473d1c9b9f3f697d9a8f357a55554329307abfaac96867a65141322c830
 
 build:
   number: 0
@@ -22,52 +22,65 @@ requirements:
     - pip
     - python >=3.7,<3.8
   run:
+    - alembic
+    - apispec
     - backoff >=1.8.0
     - bleach >=3.0.2,<4.0.0
     - cachelib >=0.1.1,<0.2
     - celery >=4.3.0,<5.0.0,!=4.4.1
     - click <8
     - colorama
-    - contextlib2
     - cron-descriptor
     - croniter >=0.3.28
-    - cryptography >=3.2.1
+    - cryptography >=3.3.2
+    - deprecation >=2.1.0,<2.2.0
     - flask >=1.1.0,<2.0.0
-    - flask-appbuilder >=3.1.1,<4.0.0
-    - flask-caching
+    - flask-appbuilder >=3.3.4,<4.0.0
+    - flask-babel
+    - flask-caching >=1.10.0
     - flask-compress
+    - flask-jwt-extended
+    - flask-login
     - flask-migrate
+    - flask-sqlalchemy
     - flask-talisman
     - flask-wtf
     - geopy
+    - graphlib-backport
     - gunicorn >=20.0.2,<20.1
     - holidays =0.10.3
     - humanize
+    - itsdangerous >=1.0.0,<2.0.0
     - isodate
     - markdown >=3.0
+    - markupsafe
+    - marshmallow
+    - marshmallow-enum
     - msgpack-python >=1.0.0,<1.1
+    - numpy
     - pandas >=1.2.2,<1.3
     - parsedatetime
-    - pathlib2
     - pgsanity
     - polyline
-    - pyarrow >=3,<3.1
+    - pyarrow >=3,<4.1
     - pyjwt >=1.7.1,<2
     - pyparsing >=2.4.7, <3.0.0
     - python >=3.7,<3.8
     - python-dateutil
     - python-dotenv
     - python-geohash
-    - pyyaml >=5.1
+    - pytz
+    - pyyaml >=5.4
     - redis-py
-    - retry >=0.9.2
     - selenium >=3.141.0
     - simplejson >=3.15.0
     - slackclient ==2.5.0
     - sqlalchemy >=1.3.16,<1.4,!=1.3.21
     - sqlalchemy-utils >=0.36.6,<0.37
     - sqlparse ==0.3.0
-    - typing_extensions >=3.7.4.3,<4
+    - tabulate ==0.8.9
+    - typing_extensions >=3.10,<4
+    - wtforms
     - wtforms-json
 
 test:
@@ -109,3 +122,4 @@ extra:
     - mariusvniekerk
     - sodre
     - CurtLH
+    - xmnlab
