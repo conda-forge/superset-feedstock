@@ -1,5 +1,5 @@
 {% set name = "apache-superset" %}
-{% set version = "1.4.0" %}
+{% set version = "1.4.1" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/apache-superset-{{ version }}.tar.gz
-  sha256: 1ce21e86a990664006ad9efce9f79476500088161d8706b0563886acc0fb301f
+  sha256: 11e3cde45a033e020f5f8605b53978efca8a4f3c9fb71264183f9fd9de238e23
 
 build:
   number: 0
@@ -20,91 +20,84 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.7,<3.8
+    - python >=3.7,<3.10
   run:
-    - alembic
-    - apispec
+    # - alembic
+    # - apispec
     - backoff >=1.8.0
-    - bleach >=3.0.2,<4.0.0
-    - cachelib >=0.1.1,<0.2
-    - celery >=4.3.0,<5.0.0,!=4.4.1
+    - bleach >=3.0.2
+    - cachelib >=0.1.1
+    - celery >=4.3.0
     - click <8
     - colorama
     - cron-descriptor
     - croniter >=0.3.28
     - cryptography >=3.3.2
-    - deprecation >=2.1.0,<2.2.0
-    - flask >=1.1.0,<2.0.0
-    - flask-appbuilder >=3.3.4,<4.0.0
-    - flask-babel
+    - deprecation >=2.1.0
+    - flask >=1.1.0
+    - flask-appbuilder >=3.4.3
+    # - flask-babel
     - flask-caching >=1.10.0
     - flask-compress
-    - flask-jwt-extended
-    - flask-login
+    # - flask-jwt-extended
+    # - flask-login
     - flask-migrate
-    - flask-sqlalchemy
+    # - flask-sqlalchemy
     - flask-talisman
     - flask-wtf
     - geopy
     - graphlib-backport
     - gunicorn >=20.1.0
-    - holidays =0.10.3
+    - holidays 0.10.3
     - humanize
-    - itsdangerous >=1.0.0,<2.0.0
     - isodate
+    # note: https://serverfault.com/a/1094095
+    - itsdangerous >=1.0.0,<2.0.0
     - markdown >=3.0
-    - markupsafe
-    - marshmallow
-    - marshmallow-enum
-    - msgpack-python >=1.0.0,<1.1
-    - numpy
+    # note: cannot import name 'soft_unicode' from 'markupsafe'
+    - markupsafe <=2.0.1
+    # - marshmallow
+    # - marshmallow-enum
+    - msgpack-python >=1.0.0
+    # - numpy
+    # note: cannot import name 'STR_NA_VALUES' from 'pandas.io.parsers'
     - pandas >=1.2.2,<1.3
     - parsedatetime
     - pgsanity
     - polyline
-    - pyarrow >=3,<4.1
-    - pyjwt >=1.7.1,<2
-    - pyparsing >=2.4.7, <3.0.0
-    - python >=3.7,<3.8
+    - pyarrow >=4.0.1
+    - pyjwt >=1.7.1
+    - pyparsing >=2.4.7
+    - python >=3.7,<3.10
     - python-dateutil
     - python-dotenv
     - python-geohash
-    - pytz
+    # - pytz
     - pyyaml >=5.4
     - redis-py
     - requests 2.26.0
     - selenium >=3.141.0
     - simplejson >=3.15.0
-    - slackclient ==2.5.0
+    - slackclient 2.5.0
+    # note: ImportError: cannot import name 'RowProxy' from 'sqlalchemy.engine'
     - sqlalchemy >=1.3.16,<1.4,!=1.3.21
-    - sqlalchemy-utils >=0.37.8,<0.38
-    - sqlparse ==0.3.0
-    - tabulate ==0.8.9
-    - typing_extensions >=3.10,<4
-    - wtforms
+    - sqlalchemy-utils >=0.37.8
+    - sqlparse 0.3.0
+    - tabulate 0.8.9
+    - typing_extensions >=3.10
+    # - wtforms
     - wtforms-json
 
 test:
   imports:
     - superset
     - superset.cli
-  commands:
+  requires:
     # for some reason pip check fails since something needs the pip typing package, so just install it
-    - pip install typing
+    - typing
+  commands:
     - pip check
     - superset --help
-    # - export SUPERSET_HOME={{ PREFIX }}  # [unix]
-    # - set SUPERSET_HOME={{ PREFIX }}  # [win]
-    # - superset db upgrade
-    # - export FLASK_APP='superset'
-    # - flask fab create-admin
-    #     --username admin
-    #     --firstname admin
-    #     --lastname admin
-    #     --email admin@fab.org
-    #     --password admin
-    # - superset load_examples
-    # - superset init
   requires:
     - pip
 
@@ -116,7 +109,6 @@ about:
   home: https://superset.apache.org
   doc_url: https://superset.apache.org
   dev_url: https://github.com/apache/superset
-
 
 extra:
   recipe-maintainers:
