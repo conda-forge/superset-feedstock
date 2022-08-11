@@ -78,7 +78,7 @@ requirements:
     # needed to support Literal (3.8) and TypeGuard (3.10)
     - typing_extensions >=3.10,<4
     # see: https://github.com/apache/superset/issues/20723
-    - werkzeug==2.0.3
+    - werkzeug 2.0.3
     - wtforms-json
 
 test:
