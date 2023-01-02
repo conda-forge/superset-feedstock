@@ -2,7 +2,7 @@
 {% set version = "2.0.1" %}
 
 package:
-  name: {{ name|lower }}
+  name: superset
   version: {{ version }}
 
 source:
