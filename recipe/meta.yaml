@@ -79,7 +79,7 @@ requirements:
     - typing-extensions >=3.10,<4
     # see: https://github.com/apache/superset/issues/20723
 #    - werkzeug ==2.0.3
-#    - wtforms ==2.3.3    
+    - wtforms >=2.3.3    
     - wtforms-json
 
 test:
