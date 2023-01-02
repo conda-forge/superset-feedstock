@@ -25,7 +25,7 @@ requirements:
     - bleach >=3.0.2,<4.0.0
     - cachelib >=0.4.1,<0.5
     - celery >=5.2.2,<6.0.0
-    - cffi >=1.15.1
+#    - cffi >=1.15.1
     - click >=8.0.3
     - colorama
     - croniter >=0.3.28
@@ -78,8 +78,8 @@ requirements:
     # needed to support Literal (3.8) and TypeGuard (3.10)
     - typing-extensions >=3.10,<4
     # see: https://github.com/apache/superset/issues/20723
-    - werkzeug ==2.0.3
-    - wtforms ==2.3.3    
+#    - werkzeug ==2.0.3
+#    - wtforms ==2.3.3    
     - wtforms-json
 
 test:
