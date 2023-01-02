@@ -30,7 +30,7 @@ requirements:
     - colorama
     - croniter >=0.3.28
     - cron-descriptor
-    - cryptography >=3.3.2
+    - cryptography >=3.3.2,<35.0.0
     - deprecation >=2.1.0,<2.2.0
     # see: https://github.com/apache/superset/issues/20723
     - flask >=2.0.0,<3.0.0
