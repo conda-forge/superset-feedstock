@@ -25,6 +25,7 @@ requirements:
     - bleach >=3.0.2,<4.0.0
     - cachelib >=0.4.1,<0.5
     - celery >=5.2.2,<6.0.0
+    - cffi >=1.15.1
     - click >=8.0.3
     - colorama
     - croniter >=0.3.28
