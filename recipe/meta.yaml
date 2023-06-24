@@ -68,14 +68,15 @@ requirements:
     - sshtunnel >=0.4.0,<0.5
     - simplejson >=3.15.0
     - slack_sdk >=3.1.1,<4
-    - sqlalchemy >=1.3.16,<2,!=1.3.21
-    - sqlalchemy-utils >=0.37.8,<0.39
+    - sqlalchemy >=1.4,<2
+    - sqlalchemy-utils >=0.38.3,<0.39
 #    - sqloxide 0.1.15
     # see https://github.com/andialbrecht/sqlparse/issues/562
-    - sqlparse >=0.4.3,<0.5
-    - tabulate ==0.8.9
+    # see https://github.com/apache/superset/issues/23742
+    - sqlparse >=0.4.3,<0.4.4
+    - tabulate >=0.8.9,<0.9
     # needed to support Literal (3.8) and TypeGuard (3.10)
-    - typing-extensions >=3.10,<5
+    - typing-extensions >=4,<5
     # see: https://github.com/apache/superset/issues/20723
     - werkzeug >=2.3.3,<3
     - wtforms >=2.3.3,<2.4
