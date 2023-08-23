@@ -12,7 +12,6 @@ source:
 
 build:
   number: 0
-  noarch: python
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - superset = superset.cli.main:superset
@@ -20,7 +19,7 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.8
+    - python >=3.8,<=3.11
   run:
     - backoff >=1.8.0
     - bleach >=3.0.2,<4.0.0
@@ -56,7 +55,7 @@ requirements:
     - pgsanity
     - polyline
     - pyparsing >=3.0.6,<4
-    - python >=3.8
+    - python >=3.8,<=3.11
     - python-dateutil
     - python-dotenv
     - python-geohash
