@@ -87,6 +87,7 @@ test:
   requires:
     # for some reason pip check fails since something needs the pip typing package, so just install it
     - typing
+    - openssl
   commands:
     - pip check
     - superset --help
