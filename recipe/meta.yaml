@@ -20,7 +20,7 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.8,<3.11
+    - python >=3.8
   run:
     - backoff >=1.8.0
     - bleach >=3.0.2,<4.0.0
@@ -56,6 +56,7 @@ requirements:
     - pgsanity
     - polyline
     - pyparsing >=3.0.6,<4
+    - python >=3.8
     - python-dateutil
     - python-dotenv
     - python-geohash
