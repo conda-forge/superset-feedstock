@@ -9,9 +9,11 @@ package:
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/apache-superset-{{ version }}.tar.gz
   sha256: af137dbaea3fae1ec9bc9217a73357eadc152362df92b7f9e26015a52912c524
+  patches:
+    - patches/assets.patch
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:

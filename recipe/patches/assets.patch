@@ -1,0 +1,18 @@
+--- superset/templates/superset/basic.html.ori	2023-08-24 17:41:56.895042868 -0400
++++ superset/templates/superset/basic.html	2023-08-24 17:43:07.483452153 -0400
+@@ -44,7 +44,14 @@
+         >
+       {% endfor %}
+       <link rel="stylesheet" type="text/css" href="{{ assets_prefix }}/static/appbuilder/css/flags/flags16.css" />
+-      <link rel="stylesheet" type="text/css" href="{{ assets_prefix }}/static/appbuilder/css/font-awesome.min.css">
++      <link rel="stylesheet" type="text/css" href="{{ assets_prefix }}/static/appbuilder/css/fontawesome/fontawesome.min.css">
++      <link rel="stylesheet" type="text/css" href="{{ assets_prefix }}/static/appbuilder/css/fontawesome/regular.min.css">
++      <link rel="stylesheet" type="text/css" href="{{ assets_prefix }}/static/appbuilder/css/fontawesome/solid.min.css">
++      <link rel="stylesheet" type="text/css" href="{{ assets_prefix }}/static/appbuilder/css/fontawesome/brands.min.css">
++      <link rel="stylesheet" type="text/css" href="{{ assets_prefix }}/static/appbuilder/datepicker/bootstrap-datepicker.css">
++      <link rel="stylesheet" type="text/css" href="{{ assets_prefix }}/static/appbuilder/datepicker/bootstrap-datepicker.css">
++      <link rel="stylesheet" type="text/css" href="{{ assets_prefix }}/static/appbuilder/select2/select2.css">
++      <link rel="stylesheet" type="text/css" href="{{ assets_prefix }}/static/appbuilder/select2/select2-bootstrap-theme.css">
+ 
+       {{ css_bundle("theme") }}
+ 
