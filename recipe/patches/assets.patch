@@ -1,5 +1,5 @@
---- basic-ori.html	2023-08-24 17:41:56.895042868 -0400
-+++ basic-new.html	2023-08-24 17:43:07.483452153 -0400
+--- superset/templates/superset/basic.html.ori	2023-08-24 17:41:56.895042868 -0400
++++ superset/templates/superset/basic.html	2023-08-24 17:43:07.483452153 -0400
 @@ -44,7 +44,14 @@
          >
        {% endfor %}
