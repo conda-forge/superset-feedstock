@@ -104,4 +104,8 @@ about:
 
 extra:
   recipe-maintainers:
+    - mariusvniekerk
+    - sodre
+    - CurtLH
+    - xmnlab
     - mediocretech
