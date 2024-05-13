@@ -1,5 +1,5 @@
-About apache-superset-feedstock
-===============================
+About superset-feedstock
+========================
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/superset-feedstock/blob/main/LICENSE.txt)
 
@@ -102,53 +102,53 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-apache--superset-green.svg)](https://anaconda.org/conda-forge/apache-superset) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/apache-superset.svg)](https://anaconda.org/conda-forge/apache-superset) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/apache-superset.svg)](https://anaconda.org/conda-forge/apache-superset) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/apache-superset.svg)](https://anaconda.org/conda-forge/apache-superset) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-superset-green.svg)](https://anaconda.org/conda-forge/superset) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/superset.svg)](https://anaconda.org/conda-forge/superset) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/superset.svg)](https://anaconda.org/conda-forge/superset) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/superset.svg)](https://anaconda.org/conda-forge/superset) |
 
-Installing apache-superset
-==========================
+Installing superset
+===================
 
-Installing `apache-superset` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `superset` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
 
 ```
 conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `apache-superset` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `superset` can be installed with `conda`:
 
 ```
-conda install apache-superset
-```
-
-or with `mamba`:
-
-```
-mamba install apache-superset
-```
-
-It is possible to list all of the versions of `apache-superset` available on your platform with `conda`:
-
-```
-conda search apache-superset --channel conda-forge
+conda install superset
 ```
 
 or with `mamba`:
 
 ```
-mamba search apache-superset --channel conda-forge
+mamba install superset
+```
+
+It is possible to list all of the versions of `superset` available on your platform with `conda`:
+
+```
+conda search superset --channel conda-forge
+```
+
+or with `mamba`:
+
+```
+mamba search superset --channel conda-forge
 ```
 
 Alternatively, `mamba repoquery` may provide more information:
 
 ```
 # Search all versions available on your platform:
-mamba repoquery search apache-superset --channel conda-forge
+mamba repoquery search superset --channel conda-forge
 
-# List packages depending on `apache-superset`:
-mamba repoquery whoneeds apache-superset --channel conda-forge
+# List packages depending on `superset`:
+mamba repoquery whoneeds superset --channel conda-forge
 
-# List dependencies of `apache-superset`:
-mamba repoquery depends apache-superset --channel conda-forge
+# List dependencies of `superset`:
+mamba repoquery depends superset --channel conda-forge
 ```
 
 
@@ -193,17 +193,17 @@ Terminology
                   produce the finished article (built conda distributions)
 
 
-Updating apache-superset-feedstock
-==================================
+Updating superset-feedstock
+===========================
 
-If you would like to improve the apache-superset recipe or build a new
+If you would like to improve the superset recipe or build a new
 package version, please fork this repository and submit a PR. Upon submission,
 your changes will be run on the appropriate platforms to give the reviewer an
 opportunity to confirm that the changes result in a successful build. Once
 merged, the recipe will be re-built and uploaded automatically to the
 `conda-forge` channel, whereupon the built conda packages will be available for
 everybody to install and use from the `conda-forge` channel.
-Note that all branches in the conda-forge/apache-superset-feedstock are
+Note that all branches in the conda-forge/superset-feedstock are
 immediately built and any created packages are uploaded, so PRs should be based
 on branches in forks and branches in the main repository should only be used to
 build distinct package versions.
