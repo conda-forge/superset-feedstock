@@ -1,5 +1,5 @@
 {% set name = "apache-superset" %}
-{% set version = "4.0.0" %}
+{% set version = "4.0.1" %}
 
 package:
   name: superset
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/apache-superset-{{ version }}.tar.gz
-  sha256: 2bf4552cfa1a9460bbb70592d009097852b9a326908d0da5136c96d1b4372148
+  sha256: 60117a2e285bc54ebc08d40da8229fcfb6f8215b4c47be39f0300a6b275587f4
 
 build:
   skip: true  # [py<39]
