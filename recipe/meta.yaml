@@ -68,6 +68,7 @@ requirements:
     - pyyaml >=6.0.0,<7.0.0
     - pyjwt >=2.4.0,<3.0
     - redis-py >=4.5.4,<5.0
+    - jsonpath-ng
     - selenium >=3.141.0,<4.10.0
     - shillelagh >=1.2.10,<2.0
     - shortid
