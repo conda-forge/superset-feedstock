@@ -10,7 +10,7 @@ source:
   sha256: eda17db9adfb3d1c3135e473adacea042cc05d0125f8cbb577ab81175f548ef8
 
 build:
-  skip: true  # [py<39]
+  skip: true  # [py<39 or py>311]
   entry_points:
     - superset=superset.cli.main:superset
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
