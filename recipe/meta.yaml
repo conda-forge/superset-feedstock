@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/apache-superset-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/apache-superset-{{ version }}.tar.gz
   sha256: eda17db9adfb3d1c3135e473adacea042cc05d0125f8cbb577ab81175f548ef8
 
 build:
@@ -20,6 +20,7 @@ requirements:
   host:
     - python
     - pip
+    - setuptools
   run:
     - python
     - backoff >=1.8.0
