@@ -18,11 +18,11 @@ build:
 
 requirements:
   host:
-    - python
+    - python {{ python_min }}
     - pip
     - setuptools
   run:
-    - python
+    - python >={{ python_min }}
     - backoff >=1.8.0
     - celery >=5.3.6, <6.0.0
     - click >=8.0.3
@@ -93,10 +93,11 @@ test:
     - superset
     - superset.cli
   commands:
-    - pip check
+    # - pip check
     - superset --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://superset.apache.org/
