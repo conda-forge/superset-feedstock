@@ -14,7 +14,7 @@ build:
   entry_points:
     - superset=superset.cli.main:superset
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
@@ -23,6 +23,7 @@ requirements:
     - setuptools
   run:
     - python
+    - setuptools <81  # superset 4.x imports pkg_resources
     - backoff >=1.8.0
     - celery >=5.3.6, <6.0.0
     - click >=8.0.3
@@ -34,6 +35,8 @@ requirements:
     - deprecation >=2.1.0, <2.2.0
     - flask >=2.2.5, <3.0.0
     - flask-appbuilder >=4.5.0, <5.0.0
+    - marshmallow >=3.0, <4  # minLength kwarg removed in marshmallow 4
+    - flask-limiter >=3.0.0, <3.13  # flask_limiter.wrappers (used by flask-appbuilder 4.x) was removed in 3.13
     - flask-caching >=2.1.0, <3
     - flask-compress >=1.13, <2.0
     - flask-talisman >=1.0.0, <2.0
