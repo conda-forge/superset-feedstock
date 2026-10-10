@@ -23,6 +23,7 @@ requirements:
     - setuptools
   run:
     - python
+    - setuptools <81  # superset 4.x imports pkg_resources
     - backoff >=1.8.0
     - celery >=5.3.6, <6.0.0
     - click >=8.0.3
